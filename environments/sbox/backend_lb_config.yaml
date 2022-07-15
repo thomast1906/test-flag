@@ -1,0 +1,36 @@
+---
+
+gateways:
+  - gateway_configuration:
+      host_name_suffix: service.internal
+      ssl_host_name_suffix: test.dns
+      certificate_name: wildcard-cert
+      private_ip_address: 1.2.3.4
+    app_configuration:
+    # RPE
+      - product: tam-store
+        component: service
+      - product: tam
+        component: pdf-service
+      - product: tam2
+        component: pdf-service
+
+  - gateway_configuration:
+      host_name_suffix: service.core-compute-ithc.internal
+      ssl_host_name_suffix: test.dns
+      certificate_name: wildcard-cert
+      private_ip_address: 5.6.7.8
+    app_configuration:
+    # SSCS
+      - product: tam3
+        component: hearings-api
+
+    # HMC
+      - product: tam4
+        component: qweqwewq
+      - product: tam4
+        component: qeqweq
+      - product: tam4
+        component: ggwegwe
+      - product: tam5
+        component: ggwegwe
