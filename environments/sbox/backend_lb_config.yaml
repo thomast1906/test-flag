@@ -34,3 +34,5 @@ gateways:
         component: ggwegwe
       - product: tam5
         component: ggwegwe
+      - product: tam6
+        component: ggwegwe
