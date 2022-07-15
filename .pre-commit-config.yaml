@@ -3,7 +3,7 @@ repos:
 #   rev: v1.74.1
 #   hooks:
 #     - id: terraform_fmt
-- repo: https://github.com/thomast1906/tamops-pre-commit-hooks
-  rev: 0.0.7
+- repo: https://github.com/hmcts/pre-commit-hooks
+  rev: 0.0.2
   hooks:
-    - id: app_gateway_backend_checks
+    - id: app_gateway_backend_check
