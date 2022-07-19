@@ -11,11 +11,11 @@ stages:
     jobs:
     - job: stage1job
       steps:
-        # - checkout: pre-commit-hooks
+        - checkout: pre-commit-hooks
         # - script: ls
         - task: Bash@3
           inputs:
               targetType: 'filePath'
-              filePath: 'tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks'
+              filePath: 'tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh'
               failOnStderr: true
         # - template: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
