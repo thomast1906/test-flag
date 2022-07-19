@@ -2,7 +2,7 @@ resources:
   repositories:
   - repository: pre-commit-hooks
     type: github
-    ref: refs/heads/master
+    ref: refs/heads/main
     name: thomast1906/tamops-pre-commit-hooks
     endpoint: 'thomast1906'
 
