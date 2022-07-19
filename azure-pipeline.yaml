@@ -11,14 +11,9 @@ stages:
     jobs:
     - job: stage1job
       steps:
-        - script: 'tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks'
-        # - task: Bash@3
-        #   inputs:
-        #       targetType: 'filePath'
-        #       filePath: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
-        #       failOnStderr: true
-          # - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
-          #   parameters:
-          #     keyvaultName: 'infra-vault-nonprod'
-          #     keyvaultSecret: 'azure-devops-token'
-          #     serviceConnection: 'azurerm-sandbox'
+        # - script: 'tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks'
+        - task: Bash@3
+          inputs:
+              targetType: 'filePath'
+              filePath: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
+              failOnStderr: true
