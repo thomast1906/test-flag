@@ -14,12 +14,12 @@ stages:
         - checkout: self
         - checkout: pre-commit-hooks
         - script: ls
-        - task: ShellScript@2
-          inputs:
-            scriptPath: 'tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh'
-        # - task: Bash@3
+        # - task: ShellScript@2
         #   inputs:
-        #       targetType: 'filePath'
-        #       filePath: 'tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh'
-        #       failOnStderr: true
+        #     scriptPath: 'tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh'
+        - task: Bash@3
+          inputs:
+            targetType: 'inline'
+            script: cd test-flag && ../tamops-pre-commit-hooks/pre-commit-hooks/script.sh 
+            failOnStderr: true
         # - template: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
