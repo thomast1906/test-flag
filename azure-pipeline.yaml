@@ -11,8 +11,8 @@ stages:
     jobs:
     - job: stage1job
       steps:
-        - checkout: self
-        - checkout: pre-commit-hooks
+        # - checkout: self
+        # - checkout: pre-commit-hooks
         # - script: ls
         - script: ls /home/vsts/work/1/s/
         - task: ShellScript@2
