@@ -20,6 +20,6 @@ stages:
         - task: Bash@3
           inputs:
             targetType: 'inline'
-            script: cd test-flag && ls && ../tamops-pre-commit-hooks/pre-commit-hooks/script.sh 
+            script: cd test-flag && ls && ../tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh
             failOnStderr: true
         # - template: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
