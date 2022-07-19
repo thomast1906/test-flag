@@ -18,4 +18,4 @@ stages:
         #       targetType: 'filePath'
         #       filePath: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
         #       failOnStderr: true
-        - template: steps/terraform.yaml@pre-commit-hooks
+        - template: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
