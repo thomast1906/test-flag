@@ -16,6 +16,6 @@ stages:
         - task: Bash@3
           inputs:
               targetType: 'filePath'
-              filePath: 'tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh'
+              filePath: 'pre-commit-hooks/app_gateway_backend_checks.sh'
               failOnStderr: true
         # - template: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
