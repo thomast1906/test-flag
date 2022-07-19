@@ -11,12 +11,12 @@ stages:
     jobs:
     - job: stage1job
       steps:
-        - script: ls '$(System.DefaultWorkingDirectory)'
-        - task: Bash@3
-          inputs:
-              targetType: 'filePath'
-              filePath: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
-              failOnStderr: true
+        - script: ls
+        # - task: Bash@3
+        #   inputs:
+        #       targetType: 'filePath'
+        #       filePath: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
+        #       failOnStderr: true
           # - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
           #   parameters:
           #     keyvaultName: 'infra-vault-nonprod'
