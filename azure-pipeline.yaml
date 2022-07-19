@@ -14,7 +14,7 @@ stages:
         - task: Bash@3
           inputs:
               targetType: 'filePath'
-              filePath: pre-commit-hooks/pre-commit-hooks/app_gateway_backend_check.sh@pre-commit-hooks
+              filePath: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
               failOnStderr: true
           # - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
           #   parameters:
