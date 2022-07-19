@@ -1,0 +1,23 @@
+resources:
+  repositories:
+  - repository: pre-commit-hooks
+    type: github
+    ref: refs/heads/master
+    name: thomast1906/tamops-pre-commit-hooks
+    endpoint: 'thomast1906'
+
+stages:
+  - stage: stage1
+    jobs:
+    - job: stage1job
+      steps:
+        - task: Bash@3
+          inputs:
+              targetType: 'filePath'
+              filePath: pre-commit-hooks/pre-commit-hooks/app_gateway_backend_check.sh@pre-commit-hooks
+              failOnStderr: true
+          # - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
+          #   parameters:
+          #     keyvaultName: 'infra-vault-nonprod'
+          #     keyvaultSecret: 'azure-devops-token'
+          #     serviceConnection: 'azurerm-sandbox'
