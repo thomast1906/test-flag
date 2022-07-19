@@ -12,7 +12,7 @@ stages:
     - job: stage1job
       steps:
         - checkout: pre-commit-hooks
-        # - script: ls
+        - script: ls
         - task: Bash@3
           inputs:
               targetType: 'filePath'
