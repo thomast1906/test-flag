@@ -13,12 +13,17 @@ stages:
       steps:
         # - checkout: self
         # - checkout: pre-commit-hooks
-        # - script: ls
-        - script: ls /home/vsts/work/1/s/
-        - task: ShellScript@2
+        - script: ls
+        # - script: ls /home/vsts/work/1/s/
+        # - task: ShellScript@2
+        #   inputs:
+        #     scriptPath: 'pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks'
+        - task: AzureCLI@2
           inputs:
-            scriptPath: 'pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks'
-
+            azureSubscription: 'thomasthorntoncloud'
+            scriptType: 'bash'
+            scriptLocation: 'scriptPath'
+            scriptPath: 'tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks'
         # - template: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
 
         - task: Bash@3
