@@ -11,6 +11,7 @@ stages:
     jobs:
     - job: stage1job
       steps:
+        - script: ls '$(System.DefaultWorkingDirectory)'
         - task: Bash@3
           inputs:
               targetType: 'filePath'
