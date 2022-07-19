@@ -13,7 +13,8 @@ stages:
       steps:
         - checkout: self
         - checkout: pre-commit-hooks
-        - script: ls
+        # - script: ls
+        - script: ls /home/vsts/work/1/s/
         - task: ShellScript@2
           inputs:
             scriptPath: 'pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks'
