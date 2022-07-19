@@ -11,6 +11,7 @@ stages:
     jobs:
     - job: stage1job
       steps:
+        - checkout: self
         - checkout: pre-commit-hooks
         - script: ls
         - task: Bash@3
