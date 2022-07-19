@@ -13,10 +13,13 @@ stages:
       steps:
         - checkout: self
         - checkout: pre-commit-hooks
-        - script: ls
-        - task: Bash@3
+        - script: ls $(Agent.BuildDirectory)
+        - task: ShellScript@2
           inputs:
-              targetType: 'filePath'
-              filePath: $(Agent.BuildDirectory)/pre-commit-hooks/app_gateway_backend_checks.sh'
-              failOnStderr: true
+            scriptPath: $(Agent.BuildDirectory)/pre-commit-hooks/app_gateway_backend_checks.sh
+        # - task: Bash@3
+        #   inputs:
+        #       targetType: 'filePath'
+        #       filePath: $(Agent.BuildDirectory)/pre-commit-hooks/app_gateway_backend_checks.sh'
+        #       failOnStderr: true
         # - template: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
