@@ -37,5 +37,5 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v3
         with:
-          add_options: '-u'
+          commit_options: '-u'
 
