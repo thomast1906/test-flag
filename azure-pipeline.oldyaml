@@ -1,0 +1,33 @@
+resources:
+  repositories:
+  - repository: pre-commit-hooks
+    type: github
+    ref: refs/heads/main
+    name: thomast1906/tamops-pre-commit-hooks
+    endpoint: 'thomast1906'
+
+stages:
+  - stage: stage1
+    jobs:
+    - job: stage1job
+      steps:
+        # - checkout: self
+        # - checkout: pre-commit-hooks
+        - script: ls
+        # - script: ls /home/vsts/work/1/s/
+        # - task: ShellScript@2
+        #   inputs:
+        #     scriptPath: 'pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks'
+        - task: AzureCLI@2
+          inputs:
+            azureSubscription: 'thomasthorntoncloud'
+            scriptType: 'bash'
+            scriptLocation: 'scriptPath'
+            scriptPath: 'tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks'
+        # - template: tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh@pre-commit-hooks
+
+        - task: Bash@3
+          inputs:
+            targetType: 'inline'
+            script: cd test-flag && ls && ../tamops-pre-commit-hooks/pre-commit-hooks/app_gateway_backend_checks.sh
+            failOnStderr: true
