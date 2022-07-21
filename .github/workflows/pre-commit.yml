@@ -43,5 +43,5 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_options: '-u'
-          add_options: '--ignore-errors'
+          add_options: '-u --ignore-errors'
 
