@@ -42,5 +42,6 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v4.4.1
         with:
-          add_options: '-u'
+          commit_options: '-u'
+          commit_message: 'testing'
 
