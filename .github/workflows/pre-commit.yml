@@ -35,12 +35,13 @@ jobs:
           extra_args: terraform_fmt --all-files
         continue-on-error: true
 
-      - uses: stefanzweifel/git-auto-commit-action@v3
-        with:
-          file_pattern: example.txt *.tf *.tfvars
-          commit_message: 'Auto Pushed robot'
-
-      # - uses: stefanzweifel/git-auto-commit-action@v4
+      # - uses: stefanzweifel/git-auto-commit-action@v3
       #   with:
-      #     commit_options: '-u'
+      #     file_pattern: example.txt *.tf *.tfvars
+      #     commit_message: 'Auto Pushed robot'
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_options: '-u'
+          add_options: '--ignore-errors'
 
