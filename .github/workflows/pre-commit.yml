@@ -40,8 +40,12 @@ jobs:
       #     file_pattern: example.txt *.tf *.tfvars
       #     commit_message: 'Auto Pushed robot'
 
-      - uses: stefanzweifel/git-auto-commit-action@v4.4.1
-        with:
-          commit_message: 'testing'
-          file_pattern: environments/*
+      # - uses: stefanzweifel/git-auto-commit-action@v4.4.1
+      #   with:
+      #     commit_message: 'testing'
+      #     file_pattern: environments/*
 
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: environments/* components/* 
