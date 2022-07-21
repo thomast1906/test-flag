@@ -42,6 +42,6 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_options: '-u'
-          add_options: '-u --ignore-errors'
+          add_options: '-u'
+          skip_dirty_check: false
 
