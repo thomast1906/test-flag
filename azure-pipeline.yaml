@@ -3,10 +3,10 @@ parameters:
   - name: branch
     displayName: branch
     type: string
-    default: 'testbranch'
+    default: '0.0.11'
     values:
-    - testbranch
-    - main
+    - 0.0.10
+    - 0.0.11
 
 variables:
   - name: branch_name
@@ -22,7 +22,7 @@ resources:
 
   - repository: pre-commit-hooks
     type: github
-    ref: 'refs/tags/0.0.11'
+    ref: 'refs/tags/$(branch_name)'
     name: thomast1906/tamops-pre-commit-hooks
     endpoint: 'thomast1906'
 
