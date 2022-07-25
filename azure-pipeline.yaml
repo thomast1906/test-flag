@@ -16,7 +16,7 @@ resources:
   repositories:
   - repository: pre-commit-hooks
     type: github
-    ref: 'refs/heads/${{ variables.branch_name }}'
+    ref: 'refs/heads/$(Build.Branch)'
     name: thomast1906/tamops-pre-commit-hooks
     endpoint: 'thomast1906'
 
