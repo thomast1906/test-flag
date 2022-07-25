@@ -3,16 +3,20 @@ parameters:
   - name: branch
     displayName: branch
     type: string
-    default: 'refs/heads/testbranch'
+    default: 'testbranch'
     values:
-    - refs/heads/testbranch
-    - refs/heads/main
+    - testbranch
+    - main
+
+variables:
+  - name: branch_name
+    value: ${{ parameters.Action }}
 
 resources:
   repositories:
   - repository: pre-commit-hooks
     type: github
-    ref: ${{ parameters.branch }}
+    ref: 'refs/heads/${{ variables.branch_name }}'
     name: thomast1906/tamops-pre-commit-hooks
     endpoint: 'thomast1906'
 
