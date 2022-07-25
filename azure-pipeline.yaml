@@ -4,9 +4,6 @@ parameters:
     displayName: branch
     type: string
     default: '0.0.11'
-    values:
-    - 0.0.10
-    - 0.0.11
 
 variables:
   - name: branch_name
