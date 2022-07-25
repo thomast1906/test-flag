@@ -14,9 +14,15 @@ variables:
 
 resources:
   repositories:
+  # - repository: pre-commit-hooks
+  #   type: github
+  #   ref: 'refs/heads/$(branch_name)'
+  #   name: thomast1906/tamops-pre-commit-hooks
+  #   endpoint: 'thomast1906'
+
   - repository: pre-commit-hooks
     type: github
-    ref: '0.0.11'
+    ref: 'refs/tags/0.0.11'
     name: thomast1906/tamops-pre-commit-hooks
     endpoint: 'thomast1906'
 
@@ -28,6 +34,14 @@ stages:
         - checkout: self
         - checkout: pre-commit-hooks
         - script: ls
+        # - task: DownloadGitHubRelease@0
+        #   inputs:
+        #     connection: 
+        #     userRepository: 
+    #defaultVersionType: 'latest' # Options: latest, specificVersion, specificTag
+    #version: # Required when defaultVersionType != Latest
+    #itemPattern: '**' # Optional
+    #downloadPath: '$(System.ArtifactsDirectory)' 
         # - script: ls /home/vsts/work/1/s/
         # - task: ShellScript@2
         #   inputs:
