@@ -8,10 +8,6 @@ parameters:
     - testbranch
     - main
 
-variables:
-  - name: branch_name
-    value: ${{ parameters.Action }}
-
 resources:
   repositories:
   - repository: pre-commit-hooks
