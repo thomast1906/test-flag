@@ -10,7 +10,7 @@ parameters:
 
 variables:
   - name: branch_name
-    value: ${{ parameters.Action }}
+    value: ${{ parameters.branch }}
 
 resources:
   repositories:
